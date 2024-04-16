@@ -19,6 +19,11 @@ sudo apt update && sudo apt upgrade
 ```Bash
 sudo apt install zsh
 ```
+6. Make sure zsh your default shell
+```Bash
+chsh -s $(which zsh)
+```
+
 6. Install [Oh my Zsh](https://github.com/ohmyzsh/ohmyzsh)
 ```Bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -29,11 +34,16 @@ nano ~/.zshrc
 ```
 and add zsh-autosuggestions and ssh--agent to plugins
 ```zsh
-plugins=(... zsh-autosuggestions, ssh-agent)
+plugins=(... zsh-autosuggestions ssh-agent)
 ```
 and add identity you want to add to the ssh-agent if you the name of the keys you want to add are `foo` and `bar.pem`
 ```zsh
 zstyle :omz:plugins:ssh-agent identities foo bar.pem
+```
+Download the autocompletion plugin
+```zsh
+sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 ```
 finally run 
 ```zsh
@@ -44,6 +54,10 @@ source ~/.zshrc
 
 
 ## Setting up Ubuntu on remote server
+1. Update and upgrade packages
+```Bash
+sudo apt update && sudo apt upgrade
+```
 
 ## Useful resources
 * [The Missing Semester of your CS education](https://missing.csail.mit.edu/)
