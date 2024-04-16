@@ -23,7 +23,7 @@ sudo apt install zsh
 ```Bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-7. With zsh and oh my zsh installed we can add autocompletion. Open the `.zshrc` file with editor
+7. With zsh and oh my zsh installed we can add couple useful plugins. Open the `.zshrc` file with editor
 ```zsh
 nano ~/.zshrc
 ```
