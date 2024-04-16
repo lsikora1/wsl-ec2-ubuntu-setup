@@ -15,6 +15,35 @@ wsl --install -d Ubuntu-22.04
 ```Bash
 sudo apt update && sudo apt upgrade
 ```
+5. Install [ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+```Bash
+sudo apt install zsh
+```
+6. Install [Oh my Zsh](https://github.com/ohmyzsh/ohmyzsh)
+```Bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+7. With zsh and oh my zsh installed we can add autocompletion. Open the `.zshrc` file with editor
+```zsh
+nano ~/.zshrc
+```
+and add zsh-autosuggestions and ssh--agent to plugins
+```zsh
+plugins=(... zsh-autosuggestions, ssh-agent)
+```
+and add identity you want to add to the ssh-agent if you the name of the keys you want to add are `foo` and `bar.pem`
+```zsh
+zstyle :omz:plugins:ssh-agent identities foo bar.pem
+```
+finally run 
+```zsh
+source ~/.zshrc
+```
+
+7. Install [Docker Desktop on Windows](https://docs.docker.com/desktop/install/windows-install/).
+
+
 ## Setting up Ubuntu on remote server
 
-## Usefull resources
+## Useful resources
+* [The Missing Semester of your CS education](https://missing.csail.mit.edu/)
